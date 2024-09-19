@@ -1,0 +1,62 @@
+---
+title: "Canada Marriage Lincese issue"
+subtitle: "from 2011 to 2025"
+author: 
+  - Ruiying Li
+thanks: "Code and data are available at: https://github.com/Liruiying0414/Marriage-Lincense"
+date: today
+date-format: long
+abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+```
+
+
+# Introduction
+
+This paper shows the marriage lincense inssued in Canada from 2011 to 2025. we use We use @talia, @opendatatorotno, and @rohan and @sec-data as our dataset, using R programming to write code and @library to clean and test data, with ggplot to form graph, finding the trend of Marriage issue through years
+
+
+# Data {#sec-mydatasection}
+
+Some of our data is of Marriage lincese (@fig-marriage), from @opendatatoronto
+
+```{r}
+#| label: fig-marriage
+#| fig-cap: Marriage license issue
+#| echo: false
+
+data |> 
+  ggplot(aes(x = date, y = marriage_licenses)) +
+  geom_point()
+
+```
+
+through the graph we found out that the marriage lincense inssue in Cnanada is increasing through years.
+
+
+
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+
+\newpage
+
+
+# References
